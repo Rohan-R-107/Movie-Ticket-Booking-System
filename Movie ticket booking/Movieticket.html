@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies website</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="Movieticket.html" class="logo">
+                Movie<span>Cloud</span>
+            </a>
+            <div class="search-box">
+                <input type="search" name="" id="search-input" placeholder="Search">
+                <i class="bx bx-search"></i>
+            </div>
+            <a href="#" class="user">
+                <img src="https://png.pngtree.com/png-vector/20230831/ourmid/pngtree-man-avatar-image-for-profile-png-image_9197911.png" alt="" class="user-img">
+            </a>
+            <button class="logoutbtn" onclick="logout()"> Logout </button>
+            <div class="navbar">
+                <a href="Movieticket.html" class="nav-link">
+                    <i class="bx bx-home"></i>
+                    <span class="nav-link-title">Home</span>
+                </a>
+                <a href="Moviebooking.html" class="nav-link">
+                    <i class='bx bxs-movie'></i>
+                    <span class="nav-link-title">Book</span>
+                </a>
+                <a href="explore.html" class="nav-link">
+                    <i class='bx bx-compass'></i>
+                    <span class="nav-link-title">Explore</span>
+                </a>
+                <a href="#home" class="nav-link">
+                    <i class='bx bxs-hot'></i>
+                    <span class="nav-link-title">Trending</span>
+                </a>
+                <a href="#home" class="nav-link">
+                    <i class='bx bx-heart'></i>
+                    <span class="nav-link-title">Favourite</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="panel active" style="background-image: url(image1.jpeg);">
+            <h1> Movie 1 </h1>
+        </div>
+        <div class="panel" style="background-image: url(Poster-2.jpeg);">
+            <h1> Movie 2 </h1>
+        </div>
+        <div class="panel" style="background-image: url(Poster-4.jpg);">
+            <h1> Movie 3 </h1>
+        </div>
+        <div class="panel" style="background-image: url(image4.jpeg);">
+            <h1> Movie 4 </h1>
+        </div>
+        <div class="panel" style="background-image: url(Poster-3.jpg);">
+            <h1> Movie 5 </h1>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+    <style>
+        h1{text-align : center;}
+        div{text-align : center;}
+        label{text-align: left;}
+article{
+    background-color: antiquewhite;
+    justify-content: center;
+    color: #1e1e2a;
+    width: 90%;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+body{
+    background-color: #1e1e2a;
+    color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 8px;
+}
+button{
+    background-color: aqua;
+    color: #1e1e2a;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 15s infinite;
+}
+
+.slideshow img:nth-child(1) {
+    animation-delay: 0s;
+}
+.slideshow img:nth-child(2) {
+    animation-delay: 2s;
+}
+.slideshow img:nth-child(3) {
+    animation-delay: 4s;
+}
+.slideshow img:nth-child(4) {
+    animation-delay: 6s;
+}
+.slideshow img:nth-child(5) {
+    animation-delay: 8s;
+}
+.slideshow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.login-container input{
+    font-size: 16px;
+    padding: 15px 10px;
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+}
+
+@keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+    </style>
+    <title> Login Form </title> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-container">
+        <h1> Login to MOVIECLOUD </h1>
+        <article>
+        <form id="loginform">
+            <label> Username: </label><br>
+            <input type="text" id="username"><br>
+            <label> Password: </label><br>
+            <input type ="password" id="password"><br> 
+            <button type="submit"> Login </button> 
+            <a href="register.html"> Create an account - If not Registered. </a>
+        </form>
+        <p id="error-msg"></p>
+    </article>
+</div>
+<div class="slideshow">
+    <img src="Poster-1.jpg" alt="Movie Poster 1">
+    <img src="Poster-2.jpeg" alt="Movie Poster 2">
+    <img src="Poster-3.jpg" alt="Movie Poster 3">
+    <img src="Poster-4.jpg" alt="Movie Poster 3">
+    <img src="Poster-5.jpg" alt="Movie Poster 3">
+</div>
+<script src="login.js"></script>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MovieCloud - Login & Register</title>
+    <style>
+        .slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slideshow img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 15s infinite;
+}
+
+.slideshow img:nth-child(1) {
+    animation-delay: 0s;
+}
+.slideshow img:nth-child(2) {
+    animation-delay: 2s;
+}
+.slideshow img:nth-child(3) {
+    animation-delay: 4s;
+}
+.slideshow img:nth-child(4) {
+    animation-delay: 6s;
+}
+.slideshow img:nth-child(5) {
+    animation-delay: 8s;
+}
+.slideshow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2a;
+            color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            color: #1e1e2a;
+            backdrop-filter: blur(5px); 
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+        input {
+            width: 75%;
+            display: relative;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            justify-content: space-between;
+        }
+        
+        button {
+            width: 75%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .toggle-link {
+            color: blue;
+            cursor: pointer;
+        }
+    @keyframes fade {
+    0% { opacity: 0; }
+    20% { opacity: 1; }
+    40% { opacity: 1; }
+    60% { opacity: 0; }
+    100% { opacity: 0; }
+}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Login Form -->
+    <div id="loginSection">
+        <h1>Login to MovieCloud</h1>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="login-msg"></p>
+        <p>Don't have an account? <span class="toggle-link" onclick="toggleForm()">Register here</span></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerSection" style="display: none;">
+        <h1>Register on MovieCloud</h1>
+        <form id="registerForm">
+            <input type="text" id="regUsername" placeholder="Username" required>
+            <input type="password" id="regPassword" placeholder="Password" required><br><br>
+            <button type="submit">Register</button>
+        </form>
+        <p id="register-msg"></p>
+        <p>Already have an account? <span class="toggle-link" onclick="toggleForm()">Login here</span></p>
+    </div>
+</div>
+
+<div class="slideshow">
+    <img src="image1.jpeg" alt="Movie Poster 1">
+    <img src="Poster-1.jpg" alt="Movie Poster 2">
+    <img src="image7.jpg" alt="Movie Poster 3">
+    <img src="Poster-4.jpg" alt="Movie Poster 3">
+    <img src="Poster-3.jpg" alt="Movie Poster 3">
+</div>
+<script src="login.js"></script>
+</body>
+</html>

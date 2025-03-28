@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2a;
+            color: azure;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .payment {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 8px;
+            color: #1e1e2a;
+            backdrop-filter: blur(5px); 
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
+        }
+        label{
+            display: flex;
+            position:relative;
+        }
+        input {
+            align-items: center;
+            width: 75%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            position: flex;
+            width: 75%;
+            padding: 10px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .payment h5{
+            text-align: left;
+        }
+        #timer {
+            font-size: 18px;
+            color: darkblue;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body">
+    <div class="payment">
+        <p id="timer" class="text">Time left: 30s</p>
+        <h1> Card Details </h1>
+    <form id="payment-form">
+        <label> Name: </label>
+        <input type="text" id="name" placeholder="Name on the card">
+        <label> Card Number: </label>
+        <input type="number" id="card-number" placeholder="xxxx xxxx xxxx xxxx">
+        <label> Expiry date (MM/YY): </label>
+        <input type="text" id="expiry-date" placeholder="MM/YY">
+        <label> CVV (3-digit pin): </label>
+        <input type="password" id="cvv" placeholder="CVV">
+        <button type="submit"> SUBMIT PAYMENT </button>
+    </form>
+    <p>Total Price to Pay: ₹<span id="total_price_display">0</span></p>
+</div>
+<script>
+    document.getElementById("payment-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const cardNumber = document.getElementById("card-number").value.trim();
+        const expiryDate = document.getElementById("expiry-date").value.trim();
+        const cvv = document.getElementById("cvv").value.trim();
+
+        if (!name || !cardNumber || !expiryDate || !cvv) {
+            alert("Please fill out all the required fields.");
+            return;
+        }
+
+        const cardNumberRegex = /^[0-9]{16}$/;
+        if (!cardNumberRegex.test(cardNumber.replace(/\s/g, ''))) {
+            alert("Please enter a valid 16-digit card number.");
+            return;
+        }
+
+        const cvvRegex = /^[0-9]{3}$/;
+        if (!cvvRegex.test(cvv)) {
+            alert("Please enter a valid 3-digit CVV.");
+            return;
+        }
+
+        const expiryDateRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        if (!expiryDateRegex.test(expiryDate)) {
+            alert("Please enter a valid expiry date in MM/YY format.");
+            return;
+        }
+
+        clearInterval(timerInterval);
+        alert("Payment Successful!");
+        window.location.href = "Movieticket.html";
+    });
+
+    let timeLeft = 30;
+    let timerInterval;
+
+    function startFormTimer() {
+        const timerDisplay = document.getElementById("timer");
+        timeLeft = 30;
+        timerDisplay.innerText = `Time left: ${timeLeft}s`;
+
+        if (timerInterval) {
+            clearInterval(timerInterval);
+        }
+
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            timerDisplay.innerText = `Time left: ${timeLeft}s`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("Time expired! Redirecting to the Home Page...");
+                window.location.href = "Movieticket.html";
+            }
+        }, 1000);
+    }
+
+    window.onload = function() {
+            startFormTimer();
+            loadPrice();
+        };
+
+    function loadPrice() {
+            let totalPrice = localStorage.getItem("totalPrice") || "0";
+            document.getElementById("total_price_display").textContent = totalPrice;
+        }
+
+</script>
+</body>
+</html>

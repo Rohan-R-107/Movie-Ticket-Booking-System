@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <title> Dashboard </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="book-container">
+    <h1> Book your Tickets </h1>
+    <hr>
+    <form id="bookingform">
+        <label for="name"> Departure From </label>
+        <select id="desti-choice">
+            <option>Select</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+            <option>Coimbatore</option>
+          </select>
+        <label for="name"> Destination </label>
+        <select id="desti-choice">
+            <option>Select</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+            <option>Coimbatore</option>
+          </select>
+        <label for="name"> Your Trip </label>
+        <div class="trip">
+            <label><input type="radio" name="tripab" value="One Way"> One Way </label>
+            <label><input type="radio" name="tripab" value="Round Trip"> Round Trip </label>
+        </div>
+        <button type="button" class="btn" onclick="location.href='submit.html'">Submit</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

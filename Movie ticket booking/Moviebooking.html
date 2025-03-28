@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Movie Ticket Booking</title>
+	<link rel="stylesheet" href="movie.css">
+</head>
+<body>
+	<div class = "book-container">
+		<label for="movie"> Pick a movie: </label>
+		<select name="movie" id="movie">
+			<option value="90"> Avengers (Rs.90)</option>
+			<option value="110"> Toy Story 3 (Rs.110)</option>
+			<option value="150"> Mission Impossible (Rs.150)</option>
+			<option value="500"> Spider-Man: No Way Home (Rs.500)</option>
+		</select>
+	</div>
+    <ul class="showcase">
+        <li>
+          <div class="seat"></div>
+          <small>N/A</small>
+        </li>
+  
+        <li>
+          <div class="seat selected"></div>
+          <small>Selected</small>
+        </li>
+  
+        <li>
+          <div class="seat occupied"></div>
+          <small>Occupied</small>
+        </li>
+      </ul>
+	<div class="container">
+		<div class="screen" style="color: black;">All Eyes Towards Here!</div>
+		<div class="row">
+			<div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+		</div>
+		<div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+		<div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat occupied"></div>
+            <div class="seat occupied"></div>
+        </div>
+		<div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+	</div>
+
+	<p class="text"> You have selected <span id="count">0</span> seats for a price of Rs.<span id="total">0</span>.</p>
+
+	<button id="btn-book" onclick="book()"> Book Now </button>
+	<script src="script.js"></script>
+</body>
+</html>
